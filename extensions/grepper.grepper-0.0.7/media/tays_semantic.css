@@ -1,0 +1,135 @@
+@font-face {
+  font-family: 'Icons';
+  src: url("./fonts/icons.eot");
+  src: url("./fonts/icons.eot?#iefix") format('embedded-opentype'), url("./fonts/icons.woff2") format('woff2'), url("./fonts/icons.woff") format('woff'), url("./fonts/icons.ttf") format('truetype'), url("./fonts/icons.svg#icons") format('svg');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+}
+
+i.icon {
+  display: inline-block;
+  opacity: 1;
+  margin: 0em 0.25rem 0em 0em;
+  width: 1.18em;
+  height: 1em;
+  font-family: 'Icons';
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  text-align: center;
+  speak: none;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+@font-face {
+  font-family: 'outline-icons';
+  src: url("./themes/default/assets/fonts/outline-icons.eot");
+  src: url("./themes/default/assets/fonts/outline-icons.eot?#iefix") format('embedded-opentype'), url("./themes/default/assets/fonts/outline-icons.woff2") format('woff2'), url("./themes/default/assets/fonts/outline-icons.woff") format('woff'), url("./themes/default/assets/fonts/outline-icons.ttf") format('truetype'), url("./themes/default/assets/fonts/outline-icons.svg#icons") format('svg');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+}
+
+@font-face {
+  font-family: 'brand-icons';
+  src: url("./themes/default/assets/fonts/brand-icons.eot");
+  src: url("./themes/default/assets/fonts/brand-icons.eot?#iefix") format('embedded-opentype'), url("./themes/default/assets/fonts/brand-icons.woff2") format('woff2'), url("./themes/default/assets/fonts/brand-icons.woff") format('woff'), url("./themes/default/assets/fonts/brand-icons.ttf") format('truetype'), url("./themes/default/assets/fonts/brand-icons.svg#icons") format('svg');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+}
+
+
+i.icon:before {
+  background: none !important;
+}
+
+i.icon.twitter{
+  font-family: 'brand-icons';
+}
+
+i.icon.outline {
+  font-family: 'outline-icons';
+}
+
+i.icon.users:before { content: "\f0c0"; }
+i.icon.search:before { content: "\f002"; }
+i.icon.newspaper:before { content: "\f1ea"; }
+i.icon.code:before { content: "\f121"; }
+i.icon.bell:before { content: "\f0f3"; }
+i.icon.file.alternate:before { content: "\f15c"; }
+i.icon.certificate:before { content: "\f0a3"; }
+i.icon.eye:before { content: "\f06e"; }
+i.icon.thumbs.down:before { content: "\f165"; }
+i.icon.thumbs.up:before { content: "\f164"; }
+i.icon.hand.pointer.outline:before { content: "\f25a"; }
+i.icon.smile.outline:before { content: "\f118"; }
+i.icon.map.marker.alternate:before { content: "\f3c5"; }
+
+
+i.icon.user:before { content: "\f007"; }
+i.icon.user.circle:before { content: "\f2bd"; }
+i.icon.user.outline:before { content: "\f007"; }
+i.icon.user.circle.outline:before { content: "\f2bd"; }
+i.icon.window.close.outline:before { content: "\f410"; }
+
+i.icon.handshake:before { content: "\f2b5"; }
+i.icon.cog:before { content: "\f013"; }
+
+
+i.icon.twitter:before {
+  content: "\f099";
+}
+
+i.icon.hand.point.left:before {
+  content: "\f0a5";
+}
+i.icon.hand.pointer:before {
+  content: "\f25a";
+} 
+
+
+.ui.icon.input > i.icon {
+    cursor: default;
+    position: absolute;
+    line-height: 1;
+    text-align: center;
+    top: 0px;
+    right: 0px;
+    margin: 0em;
+    height: 100%;
+    width: 2.67142857em;
+    opacity: 0.5;
+    border-radius: 0em 0.28571429rem 0.28571429rem 0em;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+.ui.icon.input > i.icon:not(.link) {
+    pointer-events: none;
+}
+.ui.icon.input > i.icon {
+    cursor: default;
+    position: absolute;
+    line-height: 2.5;
+    text-align: center;
+    top: 0px;
+    right: 0px;
+    margin: 0em;
+    height: 100%;
+    width: 2.67142857em;
+    opacity: 0.5;
+    border-radius: 0em 0.28571429rem 0.28571429rem 0em;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}

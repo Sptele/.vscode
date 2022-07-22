@@ -1,0 +1,248 @@
+{
+	"name": "pros",
+	"displayName": "PROS",
+	"publisher": "sigbots",
+	"description": "PROS Extension that allows for C/C++ Development for VEX V5 and VEX Cortex",
+	"author": {
+		"name": "Purdue ACM SIGBOTS"
+	},
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"bugs": {
+		"url": "https://github.com/purduesigbots/pros-vsc/issues",
+		"email": "pros_development@cs.purdue.edu"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/purduesigbots/pros-vsc.git"
+	},
+	"homepage": "http://pros.cs.purdue.edu",
+	"icon": "media/pros-tux-white.png",
+	"galleryBanner": {
+		"color": "#D6B872",
+		"theme": "dark"
+	},
+	"version": "0.4.0",
+	"engines": {
+		"vscode": "^1.56.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"workspaceContains:**/project.pros",
+		"onCommand:pros.new",
+		"onCommand:pros.welcome",
+		"onCommand:pros.build&upload",
+		"onView:prosTreeview"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "pros-view-container",
+					"title": "PROS",
+					"icon": "media/pros-tux-white.png"
+				}
+			]
+		},
+		"views": {
+			"pros-view-container": [
+				{
+					"id": "prosTreeview",
+					"name": "PROS",
+					"icon": "media/pros-tux-white.png",
+					"contextualTitle": "PROS"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "pros.build&upload",
+				"title": "Build & Upload",
+				"icon": {
+					"light": "media/pros-tux-white.png",
+					"dark": "media/pros-tux-white.png"
+				}
+			},
+			{
+				"command": "pros.upload",
+				"title": "PROS: Upload"
+			},
+			{
+				"command": "pros.build",
+				"title": "PROS: Build"
+			},
+			{
+				"command": "pros.clean",
+				"title": "PROS: Clean"
+			},
+			{
+				"command": "pros.terminal",
+				"title": "PROS: Brain Terminal"
+			},
+			{
+				"command": "pros.showterminal",
+				"title": "PROS: Integrated Terminal"
+			},
+			{
+				"command": "pros.capture",
+				"title": "PROS: Screenshot V5 Brain"
+			},
+			{
+				"command": "pros.upgrade",
+				"title": "PROS: Upgrade Project"
+			},
+			{
+				"command": "pros.new",
+				"title": "PROS: Create New PROS Project"
+			},
+			{
+				"command": "pros.welcome",
+				"title": "PROS: Welcome"
+			},
+			{
+				"command": "pros.install",
+				"title": "PROS: Install PROS"
+			},
+			{
+				"command": "pros.uninstall",
+				"title": "PROS: Uninstall PROS"
+			},
+			{
+				"command": "pros.updatecli",
+				"title": "PROS: Update PROS CLI"
+			},
+			{
+				"command": "pros.verify",
+				"title": "PROS: Verify PROS Installation"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"when": "true",
+					"command": "pros.build&upload",
+					"group": "navigation@1"
+				}
+			],
+			"editor/context": [
+				{
+					"when": "true",
+					"command": "pros.build&upload"
+				}
+			],
+			"touchBar": [
+				{
+					"when": "true",
+					"command": "pros.build&upload"
+				}
+			],
+			"commandPalette": [
+				{
+					"when": "pros.isPROSProject",
+					"command": "pros.build&upload"
+				},
+				{
+					"when": "pros.isPROSProject",
+					"command": "pros.upload"
+				},
+				{
+					"when": "pros.isPROSProject",
+					"command": "pros.build"
+				},
+				{
+					"when": "pros.isPROSProject",
+					"command": "pros.clean"
+				},
+				{
+					"when": "pros.isPROSProject",
+					"command": "pros.terminal"
+				},
+				{
+					"when": "pros.isPROSProject",
+					"command": "pros.upgrade"
+				},
+				{
+					"when": "pros.isPROSProject",
+					"command": "pros.install"
+				}
+			]
+		},
+		"customEditors": [
+			{
+				"viewType": "pros.projectEditor",
+				"displayName": "PROS Project",
+				"selector": [
+					{
+						"filenamePattern": "*.pros"
+					}
+				]
+			}
+		],
+		"configuration": {
+			"title": "PROS",
+			"properties": {
+				"pros.useGoogleAnalytics": {
+					"type": "boolean",
+					"default": true,
+					"description": "Send anonymous usage statistics."
+				},
+				"pros.showWelcomeOnStartup": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show welcome page on startup."
+				},
+				"pros.showInstallOnStartup": {
+					"type": "boolean",
+					"default": true,
+					"description": "Prompt for PROS CLI install on startup."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"deploy": "vsce publish --yarn",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.56.0",
+		"@typescript-eslint/eslint-plugin": "^4.14.1",
+		"@typescript-eslint/parser": "^4.14.1",
+		"eslint": "^7.19.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"typescript": "^4.1.3",
+		"vsce": "^1.93.0",
+		"vscode-test": "^1.5.0"
+	},
+	"dependencies": {
+		"@purduesigbots/pros-cli-middleware": "^2.5.2",
+		"@types/semver": "^7.3.6",
+		"@types/universal-analytics": "^0.4.4",
+		"axios": "^0.21.1",
+		"node-fetch": "^2.6.5",
+		"seek-bzip": "^2.0.0",
+		"semver": "^7.3.5",
+		"tar-fs": "^2.1.1",
+		"universal-analytics": "^0.4.23",
+		"unzipper": "^0.10.11"
+	},
+	"extensionDependencies": [
+		"llvm-vs-code-extensions.vscode-clangd"
+	],
+	"__metadata": {
+		"id": "ed33a27d-e43f-421f-914f-bb8c160baf69",
+		"publisherId": "daa421e1-53e0-45a7-880d-8a059c6a98f7",
+		"publisherDisplayName": "Purdue ACM SIGBots",
+		"installedTimestamp": 1655538081757
+	}
+}

@@ -1,0 +1,117 @@
+{
+	"name": "grepper",
+	"displayName": "Grepper",
+	"publisher": "Grepper",
+	"description": "The Query & Answer System for the Ambitious Developer",
+	"version": "0.0.7",
+	"icon": "resources/icon128_hand.png",
+	"homepage": "https://www.codegrepper.com",
+	"engines": {
+		"vscode": "^1.56.0"
+	},
+	"categories": [
+		"Snippets",
+		"Extension Packs",
+		"Other"
+	],
+	"galleryBanner": {
+		"color": "#55468c",
+		"theme": "dark"
+	},
+	"keywords": [
+		"grepper"
+	],
+	"activationEvents": [
+		"onCommand:grepper-vscode.grepper",
+		"onCommand:grepper-vscode.addGrepperAnswer",
+		"onView:grepperPopup",
+		"onWebviewPanel:grepperAnswersListView"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "grepperView",
+					"title": "Grepper",
+					"icon": "resources/logo-light-2.svg"
+				}
+			]
+		},
+		"views": {
+			"grepperView": [
+				{
+					"type": "webview",
+					"id": "grepperPopup",
+					"name": "Answers"
+				}
+			]
+		},
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "grepper-vscode.addGrepperAnswer",
+					"when": "editorHasSelection"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "grepper-vscode.addGrepperAnswer",
+					"when": "editorHasSelection",
+					"group": "grepper"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "grepper-vscode.addGrepperAnswer",
+				"key": "shift+cmd+g",
+				"mac": "shift+cmd+g",
+				"when": "editorHasSelection"
+			}
+		],
+		"commands": [
+			{
+				"command": "grepper-vscode.grepper",
+				"title": "Grepper Search"
+			},
+			{
+				"command": "grepper-vscode.addGrepperAnswer",
+				"title": "Add Grepper Answer",
+				"group": "grepper"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"@types/qs": "^6.9.6",
+		"@types/vscode": "^1.56.0",
+		"@typescript-eslint/eslint-plugin": "^4.14.1",
+		"@typescript-eslint/parser": "^4.14.1",
+		"eslint": "^7.19.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"qs": "^6.10.1",
+		"typescript": "^4.1.3",
+		"vscode-test": "^1.5.0"
+	},
+	"dependencies": {
+		"axios": "^0.21.1"
+	},
+	"__metadata": {
+		"id": "b75a3a5d-51fc-4a10-be73-9b12f0faf36c",
+		"publisherId": "a9b7d760-f7ce-49a8-b10b-dabf2f9a82f0",
+		"publisherDisplayName": "Grepper",
+		"installedTimestamp": 1645135649448
+	}
+}

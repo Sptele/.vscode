@@ -1,0 +1,66 @@
+{
+	"name": "one-dark-pro-italic-vivid",
+	"displayName": "One Dark Pro Italic Vivid",
+	"description": "Atom's iconic One Dark theme for Visual Studio Code",
+	"version": "2.12.5",
+	"publisher": "jsjlewis96",
+	"author": {
+		"name": "Jake Lewis"
+	},
+	"bugs": {
+		"url": "https://github.com/jsjlewis96/OneDark-Pro/issues"
+	},
+	"homepage": "https://binaryify.github.io/OneDark-Pro/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jsjlewis96/OneDark-Pro"
+	},
+	"engines": {
+		"vscode": "^1.12.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "One Dark Pro",
+				"uiTheme": "vs-dark",
+				"path": "./themes/OneDark-Pro.json"
+			},
+			{
+				"label": "One Dark Pro Italic",
+				"uiTheme": "vs-dark",
+				"path": "./themes/OneDark-Pro-Italic.json"
+			},
+			{
+				"label": "One Dark Pro Vivid",
+				"uiTheme": "vs-dark",
+				"path": "./themes/OneDark-Pro-vivid.json"
+			},
+			{
+				"label": "One Dark Pro Italic Vivid",
+				"uiTheme": "vs-dark",
+				"path": "./themes/OneDark-Pro-Italic-vivid.json"
+			}
+		]
+	},
+	"icon": "icon.png",
+	"keywords": [
+		"one dark",
+		"onedark",
+		"one dark pro",
+		"theme",
+		"italics",
+		"atom"
+	],
+	"devDependencies": {
+		"docsify-cli": "^3.3.2"
+	},
+	"__metadata": {
+		"id": "6adeb1a4-4cf4-4aa1-9790-0e094d1b6c17",
+		"publisherId": "1b828023-089c-4c77-860b-3a116589e290",
+		"publisherDisplayName": "jsjlewis96",
+		"installedTimestamp": 1636257141957
+	}
+}
