@@ -1,2 +1,2 @@
-# VSC-Extensions
-My VSCode Extensions. You must clone these files and put the extensions/ directory and argv.json into .vscode/, where that is stored (for me, that's C:\Users\gauta\)
+# VSC-Extensions (.vscode)
+My VSCode Extensions. Delete the old .vscode directory and clone this from the Users\* directory. (The repo name matches for this use)
